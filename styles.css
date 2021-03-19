@@ -3,6 +3,27 @@ body {
 }
 
 img {
-  width: 20%;
+  width: 15%;
   height: auto;
+  margin-top: 2.5em;
+}
+
+#car {
+  transition: 0.25s ease-in;
+}
+
+.north {
+  transform: rotate(-90deg);
+}
+
+.east {
+  transform: rotate(0deg);
+}
+
+.south {
+  transform: rotate(90deg);
+}
+
+.west {
+  transform: rotate(180deg);
 }
