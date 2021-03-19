@@ -21,3 +21,9 @@ function turnCar() {
   }
   car.position = $car.className;
 }
+
+document.addEventListener('keydown', startCar);
+
+function startCar() {
+
+}
