@@ -8,6 +8,10 @@ img {
   margin-top: 2.5em;
 }
 
+#car {
+  transition: 0.25s ease-in;
+}
+
 .north {
   transform: rotate(-90deg);
 }
