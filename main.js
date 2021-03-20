@@ -24,16 +24,14 @@ function turnCar(event) {
 
 document.addEventListener('keydown', startCar);
 
-var position = 0;
-$car.style.left = '0px';
-
 function startCar (event) {
+  var position = 0;
+  $car.style.left = '0px';
   if (event.code === 'Space') {
     var intervalID = setInterval(moveCar,  16);
   };
+  function moveCar() {
+    position += 5;
+    $car.style.left = position + 'px';
+  }
 };
-
-function moveCar () {
-  position+= 5;
-  $car.style.left = position + 'px';
-}
