@@ -6,7 +6,7 @@ var $car = document.querySelector('#car');
 
 document.addEventListener('keydown', turnCar);
 
-function turnCar() {
+function turnCar(event) {
   if (event.code === 'ArrowUp') {
     $car.className = 'north';
   }
@@ -20,10 +20,20 @@ function turnCar() {
     $car.className = 'west';
   }
   car.position = $car.className;
-}
+};
 
 document.addEventListener('keydown', startCar);
 
-function startCar() {
+var position = 0;
+$car.style.left = '0px';
 
+function startCar (event) {
+  if (event.code === 'Space') {
+    var intervalID = setInterval(moveCar,  16);
+  };
+};
+
+function moveCar () {
+  position+= 5;
+  $car.style.left = position + 'px';
 }
