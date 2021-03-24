@@ -1,8 +1,10 @@
 var car = {
-  position: ''
+  position: '',
+  on: ''
 };
 
 var $car = document.querySelector('#car');
+var intervalID;
 
 document.addEventListener('keydown', turnCar);
 
@@ -20,18 +22,23 @@ function turnCar(event) {
     $car.className = 'west';
   }
   car.position = $car.className;
-};
+}
 
-document.addEventListener('keydown', startCar);
+document.addEventListener('keydown', moveCar);
 
-function startCar (event) {
+function moveCar(event) {
   var position = 0;
   $car.style.left = '0px';
   if (event.code === 'Space') {
-    var intervalID = setInterval(moveCar,  16);
-  };
-  function moveCar() {
+    intervalID = setInterval(startCar, 16);
+  }
+  function startCar() {
     position += 5;
     $car.style.left = position + 'px';
+    car.on = true;
   }
-};
+  if (car.on === true) {
+    clearInterval(intervalID);
+    car.on = false;
+  }
+}
